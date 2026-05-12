@@ -97,25 +97,24 @@ Then open [http://localhost:8501](http://localhost:8501) in your browser.
 ---
 
 ## Project Structure
+```
+Rapido_Insights_ML/
+├── main.py                        # Streamlit application entry point
+├── requirements.txt               # Python dependencies
+├── Dataset/
+│   └── bookings.csv               # Booking-level historical ride data
+│   └── customers.csv              # Customer profile and cancellation metrics
+│   └── drivers.csv                # Driver performance and rating data
+│   └── location_demand.csv        # Location demand patterns and metrics
+│   └── time_features.csv          # Time-based features for rides
+└── Database/
+    ├── DBConnection.py            # MySQL connection configuration
+    ├── DB_TableSetup.py           # Database and table creation SQL
+    ├── DataCleaning.py            # SQL-based data cleaning routines
+    ├── DataInsert.py              # CSV-to-database ingestion
+    └── InitialiseTableAndData.py  # One-time setup runner
+```
 
-Rapido_Insights_ML
-
-  main.py                        # Streamlit application entry point
-
-  requirements.txt               # Python dependencies
-  
-  DataSets/
-      bookings.csv               # Booking-level historical ride data
-      customers.csv              # Customer profile and cancellation metrics
-      drivers.csv                # Driver performance and rating data
-      location_demand.csv        # Location demand patterns and metrics
-      time_features.csv          # Time-based features for rides
-  Database/
-      DBConnection.py            # MySQL connection configuration
-      DB_TableSetup.py           # Database and table creation SQL
-      DataCleaning.py            # SQL-based data cleaning routines
-      DataInsert.py              # CSV-to-database ingestion
-      InitialiseTableAndData.py  # One-time setup runner
 
 ## License
 
