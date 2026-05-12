@@ -56,6 +56,46 @@ The main query joins `bookings`, `customers`, and `drivers` tables to combine bo
 - The application assumes the MySQL database schema contains the expected columns used in the query.
 - The current repository remote push may require valid GitHub authentication or correct remote URL configuration.
 
+## Database Setup
+
+The app connects to a MySQL database using the following defaults (configurable via environment variables):
+
+| Variable | Default |
+|---|---|
+| `DB_HOST` | `127.0.0.1` |
+| `DB_PORT` | `3307` |
+| `DB_USER` | `root` |
+| `DB_PASSWORD` | `admin` |
+| `DB_NAME` | `rapido_db` |
+
+Override any value by setting the corresponding environment variable before running the app.
+
+### First-Time Initialisation
+
+Run this once to create the database, table, and load the CSV data:
+
+```bash
+python -m Database.InitialiseTableAndData
+```
+
+This will:
+1. Create the `rapido_db` database if it does not exist.
+2. Create the `bookings, customers, drivers, location_demand, time_features` 5 tables with all required columns.
+3. Load all the 5 csv file from Dataset folder into the table.
+4. Apply data cleaning routines (normalize nulls, remove impossible values, etc.).
+
+---
+
+## Running the App
+
+```bash
+streamlit run main.py
+```
+
+Then open [http://localhost:8501](http://localhost:8501) in your browser.
+
+---
+
 ## Project Structure
 
 Rapido_Insights_ML/
