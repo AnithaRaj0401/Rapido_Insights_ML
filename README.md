@@ -98,9 +98,12 @@ Then open [http://localhost:8501](http://localhost:8501) in your browser.
 
 ## Project Structure
 
-Rapido_Insights_ML/
+Rapido_Insights_ML
+
   main.py                        # Streamlit application entry point
+
   requirements.txt               # Python dependencies
+  
   DataSets/
       bookings.csv               # Booking-level historical ride data
       customers.csv              # Customer profile and cancellation metrics
